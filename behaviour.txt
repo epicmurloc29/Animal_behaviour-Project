@@ -1,0 +1,12 @@
+sleep
+eat
+walk
+bite
+run
+attack
+special move
+drink
+play
+rest
+swimm
+fly

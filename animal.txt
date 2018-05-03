@@ -1,0 +1,12 @@
+dog         mammal
+cat         mammal
+horse       mammal
+sloth       mammal
+elephant    mammal
+beaver      mammal      
+hedgehog    rodent 
+monkey      mammal
+owl         bird
+bull        mammal  
+trout       fish
+

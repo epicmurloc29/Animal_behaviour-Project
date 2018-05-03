@@ -1,0 +1,169 @@
+[
+  {
+    "name": "dog",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "cat",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "horse",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "sloth",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "elephant",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "beaver",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "hedgehog",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "monkey",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "owl",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest",
+      "fly"
+    ]
+  },
+  {
+    "name": "bull",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest"
+    ]
+  },
+  {
+    "name": "trout",
+    "action": [
+      "sleep",
+      "eat",
+      "walk",
+      "bite",
+      "run",
+      "attack",
+      "special move",
+      "drink",
+      "play",
+      "rest",
+      "swimm"
+    ]
+  }
+]

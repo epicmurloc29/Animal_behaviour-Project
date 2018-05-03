@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css1.css">
+    <title>socket test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.dev.js"></script>
+
+</head>    
+<body align = "center">
+    <h1 align = "center">ZOOO</h1>
+      <div class = "info">
+        <div class = "column2">
+            <p>Total nr of animals: </p>   
+            <p>Total hours (2s): </p>   
+            <p>Total days (48s): </p> 
+        </div>
+        <div class = "column3">
+            <p align = "center"> <span class = "sandbox">Animal sandbox</span></p>
+            <div class = "receiveAnimals">
+             <p id="receive_animals">received animals:
+                <div id="animalx"> animalx</div>
+             </p>               
+            </div>
+        </div>
+        <!-- <div class = "column4"></div> -->
+      </div>
+      <div class = "separator1"> 
+          <div class = "separator2"></div>
+          <div class = "separator3">
+              <button id="getAnimals">Get Animals</button>
+              <div class = "divider"/>
+              <button name="Start cycle">Start cycle</button>
+              <button name="Stop  cycle">Stop  cycle</button>
+            </div>
+            <div class = "behaviour_area">
+                 <!-- <div class = "filler"></div> -->
+                 <div class = "filler">
+                    <p>behaviour of animal x</p>
+                 </div>
+                 <!-- <div class = "filler"></div> -->
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <p class = "an", align = "center">area 1</p>
+                <p class = "newan">animal from server</p>
+            </div>
+            <div class="column">
+                <p class = "an", align = "center">area 2</p>
+            </div>
+            <div class="column">
+               <p class = "an", align = "center">area 3</p>
+            </div>
+        </div>         
+
+
+<!-- <h1>Animals</h1> -->
+<div id="output"></div>
+<!-- <p> hello..... </p> -->
+<!-- <p id="output2">ITEM CHANGED: </p> -->
+<p id="output_animal"></p>
+
+<div id="date1"></div>
+<!-- <script>alert('asdasd')</script> -->
+<!-- <script src="t1.js"></script> -->
+<!-- <script src="t2.js"></script> -->
+<script src="show_behv.js"></script>
+</body>
+</html>
