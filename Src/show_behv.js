@@ -1,11 +1,12 @@
 //let animals = require(__dirname+'/create_animal.js').animals;
 // let animalj  = require(__dirname+'/animals.json');
 let socket = io.connect('http://localhost:3000/');
-let output_animal = document.getElementById('output_animal');
-let getAnimals = document.getElementById('getAnimals');
-let output_animal_test = document.getElementById('receive_animals');
-let animalx = document.getElementById('animalx');
-let spanx = document.getElementById('spanx');
+let output_animal       = document.getElementById('output_animal');
+let getAnimals          = document.getElementById('getAnimals');
+let output_animal_test  = document.getElementById('receive_animals');
+let animalx             = document.getElementById('animalx');
+let spanx               = document.getElementById('spanx');
+let get_bhv             = document.getElementById('get_bhv');
 // let animalspan = document.getElementById('animalspan');
 
 
@@ -82,6 +83,23 @@ socket.on('animal_channel',animal =>{
 
 
 });
+
+socket.on('bhv_channel',animal_data =>{
+    // alert(bhv_data);
+    let bhv_string = '';
+    
+    animal_data.action.forEach(e =>{
+        let c_element = e + ' ';
+        bhv_string += c_element;
+        
+    });
+   
+    get_bhv.innerHTML = animal_data.name + " actions: " + bhv_string;
+
+});
+
+
+
 // socket.on('animal_channel',animal =>{
 //     output_animal.innerHTML= '<p><b>  animal is: ' + animal + '</b></p>';
 

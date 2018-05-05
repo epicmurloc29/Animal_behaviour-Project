@@ -20,23 +20,19 @@ let get_behaviour = (animal) =>{
                 // console.log(object.action);
 
                action_arr = object.action;
-               console.log(action_arr);
-               
                 }
 
                 return action_arr;
             },[]);
-            
-        // let behaviour = animal_reduced.split();
+
             reduce_complete = true;
-            console.log(animal_reduced);
+            // console.log(animal_reduced);
             // console.log(action_arr);
             // console.log(action_arr.lenght);
             
-        // try{
             // if(action_arr.lenght > 0){
             if(reduce_complete){
-            console.log('ajunge la arr length');
+            // console.log('ajunge la arr length');
             
             resolve(animal_reduced);
             }else{
@@ -44,7 +40,6 @@ let get_behaviour = (animal) =>{
                 reject('this ' + animal + ' is not valid');
 
             }
-        // }catch (err){
         
     });
 
@@ -54,14 +49,18 @@ let get_behaviour = (animal) =>{
 //     console.log(data);
 // })
 
-(async function get_promise(){
-    // try{
-        const actual_behaviour =  await get_behaviour(animal_dog);
-        //  await get_behaviour(animal_dog);
-        console.log(actual_behaviour);
+// (async function get_promise(){
+//     // try{
+//         const actual_behaviour =  await get_behaviour(animal_dog);
+        
+//         //  await get_behaviour(animal_dog);
+//         // console.log(actual_behaviour);
 
-    // }catch(err){
-    //     return 'what the fuck';
-    // }
+//     // }catch(err){
+//     //     return 'what the fuck';
+//     // }
     
-})();
+// })();
+
+
+exports.get_behaviour = get_behaviour;

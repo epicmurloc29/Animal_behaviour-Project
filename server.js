@@ -1,6 +1,7 @@
 var express = require('express');
 let socket  = require('socket.io');
 let animalj  = require(__dirname+'/animals.json');
+let get_behaviour = require(__dirname+'/get_behaviour.js').get_behaviour;
 // let animals = require(__dirname+'/create_animal.js').animals;
 // let show_behv = require(__dirname+'/show_behv.js').f;
 // var path = require('path');
@@ -48,11 +49,11 @@ const delay = (ms) => {
 
 io.on('connection',function(socket){  //set connection, fiecare instanta (tab) la pagina sau fiecare client are un socket.id diferit
     console.log('connection made',socket.id);
-
+    
     socket.on('getanimal_ch',animaltrue =>{
         if(animaltrue === true){
             console.log('flag received!');
-
+            
             (async function loop(){
                 const animal_promised = await getanimalname;  //animal_promised ia valoarea rezolvarii lui getanimalname,un array
                 for(let i =0;i<animal_promised.length;i++){ 
@@ -61,36 +62,43 @@ io.on('connection',function(socket){  //set connection, fiecare instanta (tab) l
                     //  await new Promise((resolve,reject)=>        //merge    
                     //     setTimeout((resolve),1000));                 
                     
-                     io.sockets.emit('animal_channel',animal_promised[i]);
+                    io.sockets.emit('animal_channel',animal_promised[i]);
                 }
             })();            
-
-
-
-
+            
+            
+            
+            
         }
-
+        
     });
-
+    
     socket.on('a_object_ch',single_animal => {
         console.log(single_animal);
-
+        (async function get_promise(){
+            // try{
+                const actual_behaviour =  await get_behaviour(single_animal.name);
+                single_animal.action = actual_behaviour;
+                console.log(single_animal);
+                io.sockets.emit('bhv_channel',single_animal);
+        })();
+        
     });
-
-
+    
+    
     
     // getanimalname.then(pdata =>{
         
-    //         for(let i =0;i<pdata.length;i++){                      //not practical
-    //             setTimeout(()=>{
-    //                 io.sockets.emit('animal_channel',pdata[i]);
-    //                 },1000 * i);   
-
-    //         }
-
-
-    // })
-
+        //         for(let i =0;i<pdata.length;i++){                      //not practical
+        //             setTimeout(()=>{
+            //                 io.sockets.emit('animal_channel',pdata[i]);
+            //                 },1000 * i);   
+            
+            //         }
+            
+            
+            // })
+            
     
     // io.sockets.emit('one', 1);
     
