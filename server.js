@@ -49,7 +49,7 @@ const delay = (ms) => {
 
 io.on('connection',function(socket){  //set connection, fiecare instanta (tab) la pagina sau fiecare client are un socket.id diferit
     console.log('connection made',socket.id);
-    
+
     socket.on('getanimal_ch',animaltrue =>{
         if(animaltrue === true){
             console.log('flag received!');
@@ -72,7 +72,7 @@ io.on('connection',function(socket){  //set connection, fiecare instanta (tab) l
         }
         
     });
-    
+            
     socket.on('a_object_ch',single_animal => {
         console.log(single_animal);
         (async function get_promise(){
@@ -82,6 +82,17 @@ io.on('connection',function(socket){  //set connection, fiecare instanta (tab) l
                 console.log(single_animal);
                 io.sockets.emit('bhv_channel',single_animal);
         })();
+
+    socket.on('start_cycle',data =>{
+        console.log('start cycle!');
+        console.log(data);
+    // *************TO DO LOOP AND SEND THE ACTIONS BACK ON ONE OF THE AREAS USING ASYNC AND THE
+    // **********DELAY FUNCTION    
+    });    
+
+
+
+
         
     });
     
