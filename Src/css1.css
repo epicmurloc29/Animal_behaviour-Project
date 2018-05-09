@@ -88,7 +88,7 @@
 /* ************************************** */
 
 /* BUTTON SECTION******************************/
-button {
+.button_default {
     float: left;
     background-color:tomato;
     border: none;
@@ -103,8 +103,23 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
+.button_disabled {
+    float: left;
+    background-color:gray;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    border-radius: 5px 25px;
+    margin-left: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 
-button:hover{
+}
+.hover_class:hover{
     background-color: slateblue;
 }
 
