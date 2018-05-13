@@ -56,10 +56,10 @@ let get_property = ((byte,df_area)=>{
 
 //TESTING AREA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 
-// let a = [0,1,1]            
+// let a = [0,1,1]      
 //         up_area_stat(a).then(data =>{
 //                 console.log(data);  
-//             });
+//             });      
             
             // console.log(empty_area);
 // let arrr = [1,2];

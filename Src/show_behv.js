@@ -9,12 +9,23 @@ let animalx             = document.getElementById('animalx');
 let spanx               = document.getElementById('spanx');
 let get_bhv             = document.getElementById('get_bhv');
 let start_cycle         = document.getElementById('Start_cycle');
+let stop_cycle         = document.getElementById('Stop_cycle');
 let area_1              = document.getElementById('area_1');
 let area_2              = document.getElementById('area_2');
 let area_3              = document.getElementById('area_3');
 let cnt                 = 0;
 
 window.addEventListener('load', function() {
+
+    // Notification.requestPermission(function (permission) {
+    //     // If the user accepts, let's create a notification
+    //     if (permission === "granted") {
+    //       var notification = new Notification("Hi there!");
+    //     }
+    //   });
+    Notification.requestPermission();
+
+
     console.log('All assets are loaded')
     start_cycle.disabled = true;
     let default_status = [0,0,0];
@@ -141,6 +152,7 @@ let once = () =>{
 
 
 start_cycle.addEventListener("click",()=>{
+    // show_notification();
     // let cycle_flag = true;
     
     let get_final_a = new Promise(resolve =>{
@@ -189,6 +201,9 @@ start_cycle.addEventListener("click",()=>{
 
 })
 
+stop_cycle.addEventListener("click",()=>{
+    show_notification();
+})
 // socket.on('animal_channel',animal =>{
 //     output_animal.innerHTML= '<p><b>  animal is: ' + animal + '</b></p>';
 
@@ -198,12 +213,57 @@ start_cycle.addEventListener("click",()=>{
 socket.on('area_channel',data =>{
     // alert(data.area+ " "+ area_1.getAttribute("id"))
 
-    if(area_1.getAttribute("id") === data.area){
-        // alert("!!!")
-        area_1.innerHTML = '<p>'+ data.action + '</p>'
+    // if(area_1.getAttribute("id") === data.area){
+    //     // alert("!!!")
+    //     area_1.innerHTML = '<p>'+ data.action + '</p>'
+    // }else if(area_2.getAttribute("id") === data.area){
+    //     area_2.innerHTML = '<p>'+ data.action + '</p>'
+    // }
+
+    //not pretty but works :)
+    let notification_obj = {
+        name:data.name,
+        area:data.area
     }
+    // alert(notification_obj.name)
+    
+    switch(data.area){
+        case 'area_1':
+            area_1.innerHTML = 
+                                '<p>' + data.name + '</p>'
+                              + '<p>'+ data.action + '</p>';
+            show_notification(notification_obj);
+            break;
+            case 'area_2':
+            area_2.innerHTML = 
+                                '<p>' + data.name + '</p>'
+                               +'<p>'+ data.action + '</p>';
+            show_notification(notification_obj);
+            break;
+            case 'area_3':
+            area_3.innerHTML = 
+                                '<p>' + data.name + '</p>'
+                               +'<p>'+ data.action + '</p>';
+            show_notification(notification_obj);
+            break;
+
+    }
+
 });
 
+
+let show_notification = (data) =>{
+    // alert(Notification.permission);
+    let options = {
+        icon: './not2.png',
+        body: data.name + ' from ' + data.area + ' finished a cycle!',
+        // body: 'test',
+        tag: 'notifix '+ data.name
+
+    }
+    let notify = new Notification('Project',options);
+    setTimeout(notify.close.bind(notify),4000);
+}
 
 
 
